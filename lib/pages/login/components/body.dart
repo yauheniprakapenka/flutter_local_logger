@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: size.width * 0.05),
             SvgPicture.asset(
-              'assets/icons/login.svg',
+              'assets/illustration/login.svg',
               width: size.width * 0.7,
             ),
             RoundedTextField(

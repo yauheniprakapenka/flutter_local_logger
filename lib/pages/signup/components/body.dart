@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: kTopAndBottonMargin),
             SvgPicture.asset(
-              'assets/icons/signup.svg',
+              'assets/illustration/signup.svg',
               width: size.width * 0.7,
             ),
             SizedBox(height: size.width * 0.05),
