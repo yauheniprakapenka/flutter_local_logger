@@ -3,13 +3,13 @@ import 'package:flutter_login_page/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String title;
-  final Color titleColor, backgroundColor;
+  final Color titleColor, buttonColor;
   final Function onPressed;
 
   RoundedButton({
-    @required this.title,
-    @required this.titleColor,
-    @required this.backgroundColor,
+    this.title,
+    this.titleColor,
+    this.buttonColor,
     @required this.onPressed,
   });
 
@@ -18,18 +18,17 @@ class RoundedButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16),
-      height: kButtonHeight,
+      height: kRoundButtonHeight,
       width: size.width - 56,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(kButtonHeight / 2),
+        borderRadius: BorderRadius.circular(kRoundButtonHeight / 2),
         child: TextButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
                 if (states.contains(MaterialState.pressed))
                   return Colors.blue[100];
-                return backgroundColor;
+                return buttonColor;
               },
             ),
           ),
