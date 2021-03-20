@@ -3,28 +3,36 @@ import 'package:flutter_login_page/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String title;
-  final Color titleColor;
+  final Color titleColor, backgroundColor;
   final Function onPressed;
 
   RoundedButton({
-    Key key,
     @required this.title,
     @required this.titleColor,
+    @required this.backgroundColor,
     @required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SizedBox(
-      height: kButtonSize,
-      width: size.width - 32,
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 16),
+      height: kButtonHeight,
+      width: size.width - 56,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(kButtonSize / 2),
+        borderRadius: BorderRadius.circular(kButtonHeight / 2),
         child: TextButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.resolveWith(_getColor)),
+            backgroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.pressed))
+                  return Colors.blue[100];
+                return backgroundColor;
+              },
+            ),
+          ),
           child: Text(
             title,
             style: TextStyle(color: titleColor),
@@ -34,18 +42,4 @@ class RoundedButton extends StatelessWidget {
       ),
     );
   }
-}
-
-Color _getColor(Set<MaterialState> state) {
-  Set<MaterialState> interactiveStates = <MaterialState>{
-    MaterialState.pressed,
-    MaterialState.hovered,
-    MaterialState.focused,
-  };
-
-  if (state.any(interactiveStates.contains)) {
-    return kPrimaryLightColor;
-  }
-
-  return kPrimaryColor;
 }

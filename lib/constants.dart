@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF6f35A5);
-const kPrimaryLightColor = Color(0xFFF1E6FF);
+const Color kPrimaryColor = Color(0xFF6f35A5);
+const Color kPrimaryLightColor = Color(0xFFF1E6FF);
 
-const kButtonSize = 60.0;
+const double kButtonHeight = 60.0;
