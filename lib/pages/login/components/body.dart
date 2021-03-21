@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_page/components/rounded_button.dart';
 import 'package:flutter_login_page/components/rounded_text_field.dart';
-import 'package:flutter_login_page/components/text_sign_up_button.dart';
+import 'package:flutter_login_page/pages/signup/components/text_sign_up_button.dart';
 import 'package:flutter_login_page/pages/login/components/background.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_login_page/constants.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_page/components/circle_button.dart';
-import 'package:flutter_login_page/components/or_divider.dart';
+import 'package:flutter_login_page/pages/signup/components/or_divider.dart';
 import 'package:flutter_login_page/components/rounded_button.dart';
 import 'package:flutter_login_page/components/rounded_text_field.dart';
 import 'package:flutter_login_page/constants.dart';
