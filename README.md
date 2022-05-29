@@ -1,16 +1,30 @@
-# Flutter Login Page
+# Local logger
 
-Спроектирован экран авторизации пользователя.
+Пример использования `Local logger`. 
 
-### SDK
-- Dart v2.12.1
-- Flutter v2.0.2
+За сохранение логов отвечает features/local_logger.
 
-### Dependencies
-- flutter_svg: ^0.19.3 
+Доступные интерфейсы:
+- getLog
+- writeLog
+- writeException
+- writeError
+- clearLog
 
-### Preview
-- Посмотреть видео на youtube по [ссылке](https://www.youtube.com/watch?v=wIZwLsrypMs)
-<br><br>
+Логи сохраняются в файл `log.txt`.
 
-![flutter-template](https://user-images.githubusercontent.com/47568606/111884802-ee5bd580-89d4-11eb-9ffc-1b91ed9dbaef.jpg)
+### Отправить логи в соц сети
+---
+
+Для отправки логов необходимо получить логи через getLog. Дальше отправить эти логики с помощью любого сервиса, например, как показано в проекте - через `share_plus`. 
+
+### Скачать лог файл с физического устройства iOS
+---
+
+Для этого необходимо подключить устройство к компьютеру, а затем
+
+Xcode - Window - Device and simulator - Devices - Выбрать подключенный девайс - В installed apps выбрать приложение - Нажать кнопку троеточие - Download container - Правой кнопкой на *.xcappdata - show package contents - Documents - log.txt
+
+### Demo
+---
+<img src=".github/demo.gif" height=300> 

@@ -1,21 +1,24 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_login_page/constants.dart';
-import 'package:flutter_login_page/pages/home/home_page.dart';
+import 'package:local_logger/local_logger.dart';
 
-void main() {
-  runApp(MyApp());
+import 'app/local_logger_screen.dart';
+
+void main() async {
+  serviceLocator.registerSingleton<LocalLogger>(LocalLogger());
+  runApp(_MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class _MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<_MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: kPrimaryPurpleColor,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: HomePage(),
+    return const MaterialApp(
+      home: LocalLoggerScreen(),
     );
   }
 }
